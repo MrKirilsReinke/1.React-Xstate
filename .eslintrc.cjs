@@ -14,5 +14,11 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'indent': ['error', 2], // Enforce 2-space indentation
+    'linebreak-style': 'off', // Disable linebreak style rule
+    'quotes': ['error', 'double'], // Enforce double quotes
+    'semi': ['error', 'always'], // Enforce semicolons
+    'no-multi-spaces': 'error', // Disallow multiple spaces
+    'no-multiple-empty-lines': 'error', // Disallow multiple empty lines
   },
 }
