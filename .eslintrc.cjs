@@ -20,5 +20,6 @@ module.exports = {
     'semi': ['error', 'always'], // Enforce semicolons
     'no-multi-spaces': 'error', // Disallow multiple spaces
     'no-multiple-empty-lines': 'error', // Disallow multiple empty lines
+    'comma-dangle': ['error', 'never'] // Enforce trailing commas
   },
 }

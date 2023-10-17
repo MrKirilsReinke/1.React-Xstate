@@ -1,9 +1,9 @@
 import { useMachine } from "@xstate/react";
-import trafficLightMachine from "./trafficLightMachine";
+import blinkingTrafficLightMachine from "./blinkingTrafficLightMachine";
 import "./App.css";
 
 function App() {
-  const [current, send] = useMachine(trafficLightMachine);
+  const [current, send] = useMachine(blinkingTrafficLightMachine);
 
   return (
     <>
