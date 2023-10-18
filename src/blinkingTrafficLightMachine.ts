@@ -18,7 +18,7 @@ export const blinkingTrafficLightMachine = createMachine(
       green: {
         on: {
           TIMER: {
-            target: "blinkingGreen",
+            target: "blinkingGreen"
             // actions: ["startBlinking", "stopBlinking"]
           }
         }
