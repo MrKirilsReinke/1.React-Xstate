@@ -19,6 +19,9 @@ function App() {
       <button onClick={() => send("TIMER")}>
         Change light
       </button>
+      <button onClick={() => console.log("info")}>
+        Log info
+      </button>
     </>
   );
 }
