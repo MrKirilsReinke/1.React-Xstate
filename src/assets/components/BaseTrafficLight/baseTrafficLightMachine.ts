@@ -1,6 +1,6 @@
 import { createMachine } from "xstate";
 
-export const trafficLightMachine = createMachine({
+export const baseTrafficLightMachine = createMachine({
   id: "trafficLight",
   initial: "red",
   states: {
@@ -22,4 +22,4 @@ export const trafficLightMachine = createMachine({
   }
 });
 
-export default trafficLightMachine;
+export default baseTrafficLightMachine;

@@ -1,12 +1,11 @@
 import { useMachine } from "@xstate/react";
-import blinkingTrafficLightMachine from "./blinkingTrafficLightMachine";
-import "./App.css";
+import { baseTrafficLightMachine } from "./baseTrafficLightMachine";
 
-function App() {
-  const [current, send] = useMachine(blinkingTrafficLightMachine);
+function BaseTrafficLight() {
+  const [current, send] = useMachine(baseTrafficLightMachine);
 
   return (
-    <>
+    <div className="grid grid-flow-row gap-5">
       <div className="bg-neutral-800 w-44 h-[400px] rounded-3xl relative border-solid border-4 border-neutral-700 m-auto linear-gradient 
       before:content-[''] before:bg-neutral-800 before:w-44 before:h-40 before:m-auto before:absolute before:right-1/2 before:translate-x-1/2 before:top-[-20px] before:rounded-full before:z-[-1] radial-gradient-before
       after:content-[''] after:bg-neutral-800 after:w-12 after:h-[500px] after:ml-16 after:absolute after:top-[150px] after:z-[-1] linear-gradient-after"
@@ -24,8 +23,8 @@ function App() {
       <button onClick={() => send("TIMER")}>
         Change light
       </button>
-    </>
+    </div>
   );
 }
 
-export default App;
+export default BaseTrafficLight;
