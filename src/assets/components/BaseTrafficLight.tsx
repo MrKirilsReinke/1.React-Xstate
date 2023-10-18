@@ -1,5 +1,5 @@
 import { useMachine } from "@xstate/react";
-import { baseTrafficLightMachine } from "./baseTrafficLightMachine";
+import { baseTrafficLightMachine } from "../machines/baseTrafficLightMachine";
 
 function BaseTrafficLight() {
   const [current, send] = useMachine(baseTrafficLightMachine);
