@@ -7,8 +7,8 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <div className="grid grid-flow-col">
-    <BaseTrafficLight />
-    <BlinkingTrafficLight />
+      <BaseTrafficLight />
+      <BlinkingTrafficLight />
     </div>
   </React.StrictMode>
 );
