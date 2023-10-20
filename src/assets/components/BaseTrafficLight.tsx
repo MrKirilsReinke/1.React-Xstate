@@ -9,7 +9,7 @@ function BaseTrafficLight() {
   return (
     <div className="grid grid-flow-row gap-5">
       <h1 className="text-center">BaseTrafficLight</h1>
-      <p className="text-center mb-10">Current state: {JSON.stringify(current.value)}</p>
+      <p className="text-center">Current state: {JSON.stringify(current.value)}</p>
 
       <div className="bg-neutral-800 w-44 h-[400px] rounded-3xl relative border-solid border-4 border-neutral-700 m-auto linear-gradient 
       before:content-[''] before:bg-neutral-800 before:w-44 before:h-40 before:m-auto before:absolute before:right-1/2 before:translate-x-1/2 before:top-[-20px] before:rounded-full before:z-[-1] radial-gradient-before

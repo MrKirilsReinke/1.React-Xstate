@@ -8,7 +8,7 @@ import CondActParallelStateTrafficLightMachine from "./assets/components/CondAct
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <div className="grid grid-flow-col">
+  <div className="grid grid-cols-3 h-full">
     {/* <CheckBaseTrafficLight /> */}
     <BaseTrafficLight />
     <ParallelStateTrafficLight />
