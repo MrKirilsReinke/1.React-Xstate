@@ -1,24 +1,24 @@
 import { createMachine } from "xstate";
 
 export const baseTrafficLightMachine = createMachine({
-  id: "trafficLight",
+  id: "baseTrafficLightMachine",
   initial: "red",
   predictableActionArguments: true,
   preserveActionOrder: true,
   states: {
     red: {
       on: {
-        TIMER: "yellow"
+        SWITCH_LIGHT: "yellow"
       }
     },
     yellow: {
       on: {
-        TIMER: "green"
+        SWITCH_LIGHT: "green"
       }
     },
     green: {
       on: {
-        TIMER: "red"
+        SWITCH_LIGHT: "red"
       }
     }
   }
