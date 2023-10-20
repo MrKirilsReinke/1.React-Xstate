@@ -3,6 +3,7 @@ import { createMachine } from "xstate";
 export const blinkingTrafficLightMachine = createMachine(
   {
     id: "blinkingTrafficLightMachine",
+    predictableActionArguments: true,
     initial: "red",
     states: {
       red: {
