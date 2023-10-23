@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import BaseTrafficLight from "./assets/components/BaseTrafficLight.tsx";
 import ParallelStateTrafficLight from "./assets/components/ParallelStateTrafficLight.tsx";
 import CondActParallelStateTrafficLightMachine from "./assets/components/CondActParallelStateTrafficLightMachine.tsx";
+// import DelayedTrafficLight from "./assets/components/DelayedTrafficLight.tsx";
 // import BlinkingTrafficLight from "./assets/components/BlinkingTrafficLight.tsx";
 import "./index.css";
 
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <BaseTrafficLight />
     <ParallelStateTrafficLight />
     <CondActParallelStateTrafficLightMachine />
+    {/* <DelayedTrafficLight  /> */}
     {/* <BlinkingTrafficLight /> */}
   </div>
 );
