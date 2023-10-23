@@ -1,5 +1,27 @@
 import { createMachine } from "xstate";
 
+const pedestrianStates = {
+  id: "pedestrian",
+  initial: "walk",
+  states: {
+    walk: {
+      on: {
+        SWITCH_LIGHT: { target: "wait" }
+      }
+    },
+    wait: {
+      on: {
+        SWITCH_LIGHT: { target: "walk"}
+      }
+    }
+    // requestToWalk: {
+    //   on: {
+    //     SWITCH_LIGHT: { target: "walk" }
+    //   }
+    // }
+  }
+};
+
 export const checkBaseTrafficLightMachine = createMachine({
   id: "trafficLight",
   initial: "red",
@@ -12,7 +34,8 @@ export const checkBaseTrafficLightMachine = createMachine({
     red: {
       on: {
         TIMER: "yellow"
-      }
+      },
+      ...pedestrianStates
     },
     yellow: {
       on: {
