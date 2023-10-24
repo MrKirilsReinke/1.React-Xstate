@@ -1,8 +1,10 @@
 import { useMachine } from "@xstate/react";
-import blinkingTrafficLightMachine from "../machines/blinkingTrafficLightMachine";
+import { hierarchicalBaseTrafficLightMachine } from "../machines/hierarchicalBaseTrafficLightMachine";
 
-function BlinkingTrafficLight() {
-  const [current, send] = useMachine(blinkingTrafficLightMachine);
+function HierarchicalBaseTrafficLight() {
+  const [current, send] = useMachine(hierarchicalBaseTrafficLightMachine, {
+    devTools: true
+  });
 
   return (
     <div className="grid grid-flow-row gap-5">
@@ -20,11 +22,11 @@ function BlinkingTrafficLight() {
         <div className={`bg-yellow-400 w-[100px] h-[100px] rounded-full absolute top-[145px] left-9 border-dotted border-2 border-yellow-400 bg-shadow-yellow bg-size-5 radial-gradient-orange ${current.matches("yellow") ? "opacity-100" : "opacity-10"}`}></div>
         <div className={`bg-green-600 w-[100px] h-[100px] rounded-full absolute top-[270px] left-9 border-dotted border-2 border-green-600 bg-shadow-green bg-size-5 radial-gradient-lime ${current.matches("green") ? "opacity-100" : "opacity-10"}`}></div>
       </div>
-      <button onClick={() => send("TIMER")}>
+      <button onClick={() => send("SWITCH_LIGHT")}>
         Change light
       </button>
     </div>
   );
 }
 
-export default BlinkingTrafficLight;
+export default HierarchicalBaseTrafficLight;

@@ -1,16 +1,18 @@
-import React from "react";
+// import React from "react";
 import ReactDOM from "react-dom/client";
-import BaseTrafficLight from "./assets/components/BaseTrafficLight.tsx";
-import ParallelStateTrafficLight from "./assets/components/ParallelStateTrafficLight.tsx";
-import BlinkingTrafficLight from "./assets/components/BlinkingTrafficLight.tsx";
+// import BaseTrafficLight from "./assets/components/BaseTrafficLight.tsx";
+// import HierarchicalBaseTrafficLight from "./assets/components/HierarchicalBaseTrafficLight";
+// import DelayedTrafficLight from "./assets/components/DelayedTrafficLight.tsx";
+// import ParallelStateTrafficLight from "./assets/components/ParallelStateTrafficLight.tsx";
+import ContextActionsConditionsTrafficLight from "./assets/components/ContextActionsConditionsTrafficLight";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <div className="grid grid-flow-col">
-      <BaseTrafficLight />
-      <ParallelStateTrafficLight />
-      <BlinkingTrafficLight />
-    </div>
-  </React.StrictMode>
+  <div>
+    {/* <BaseTrafficLight /> */}
+    {/* <HierarchicalBaseTrafficLight /> */}
+    {/* <DelayedTrafficLight /> */}
+    {/* <ParallelStateTrafficLight /> */}
+    <ContextActionsConditionsTrafficLight />
+  </div>
 );

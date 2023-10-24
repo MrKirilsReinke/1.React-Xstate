@@ -1,7 +1,15 @@
 import { createMachine } from "xstate";
 
-export const baseTrafficLightMachine = createMachine({
-  id: "baseTrafficLightMachine",
+const pedestrianStates = {
+  id: "pedestrian",
+  initial: "walk",
+  states: {
+    walk: {}
+  }
+};
+
+export const hierarchicalBaseTrafficLightMachine = createMachine({
+  id: "hierarchicalBaseTrafficLightMachine",
   initial: "red",
   predictableActionArguments: true,
   preserveActionOrder: true,
@@ -9,7 +17,8 @@ export const baseTrafficLightMachine = createMachine({
     red: {
       on: {
         SWITCH_LIGHT: "yellow"
-      }
+      },
+      ...pedestrianStates
     },
     yellow: {
       on: {
@@ -24,4 +33,4 @@ export const baseTrafficLightMachine = createMachine({
   }
 });
 
-export default baseTrafficLightMachine;
+export default hierarchicalBaseTrafficLightMachine;
