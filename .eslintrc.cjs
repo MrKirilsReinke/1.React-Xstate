@@ -23,3 +23,4 @@ module.exports = {
     'comma-dangle': ['error', 'never'] // Enforce trailing commas
   },
 }
+
