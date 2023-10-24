@@ -3,7 +3,7 @@ import { createMachine } from "xstate";
 export const contextActionsConditionsTrafficLightMachine = createMachine(
   {
     id: "contextActionsConditionsTrafficLightMachine",
-    initial: "red", //initial state is red
+    initial: "red",
     predictableActionArguments: true,
     preserveActionOrder: true,
     context: {
@@ -13,11 +13,11 @@ export const contextActionsConditionsTrafficLightMachine = createMachine(
     states: {
       red: {
         id: "red",
-        initial: "active", //we are here by default, initial substate is turnedOn
+        initial: "active",
         states: {        
           active: {
             after: {
-              7000: { //when we hit the button, we are changing to red.switching AND yellow.turnedOn
+              7000: {
                 target: "#yellow.active"
               }
             }

@@ -2,7 +2,7 @@ import { useMachine } from "@xstate/react";
 import { delayedTrafficLightMachine } from "../machines/delayedTrafficLightMachine";
 
 function DelayedTrafficLight() {
-  const [current, send] = useMachine(delayedTrafficLightMachine, {
+  const [current] = useMachine(delayedTrafficLightMachine, {
     devTools: true
   });
 
