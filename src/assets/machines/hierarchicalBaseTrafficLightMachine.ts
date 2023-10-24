@@ -14,15 +14,10 @@ const pedestrianStates = {
         SWITCH_LIGHT: { target: "walk"}
       }
     }
-    // requestToWalk: {
-    //   on: {
-    //     SWITCH_LIGHT: { target: "walk" }
-    //   }
-    // }
   }
 };
 
-export const checkBaseTrafficLightMachine = createMachine({
+export const hierarchicalBaseTrafficLightMachine = createMachine({
   id: "trafficLight",
   initial: "red",
   predictableActionArguments: true,
@@ -65,4 +60,4 @@ export const checkBaseTrafficLightMachine = createMachine({
   }
 });
 
-export default checkBaseTrafficLightMachine;
+export default hierarchicalBaseTrafficLightMachine;

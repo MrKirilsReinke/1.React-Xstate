@@ -1,8 +1,8 @@
 import { useMachine } from "@xstate/react";
-import { checkBaseTrafficLightMachine } from "../machines/checkBaseTrafficLightMachine";
+import { hierarchicalBaseTrafficLightMachine } from "../machines/hierarchicalBaseTrafficLightMachine";
 
-function CheckBaseTrafficLight() {
-  const [current, send] = useMachine(checkBaseTrafficLightMachine, {
+function HierarchicalBaseTrafficLight() {
+  const [current, send] = useMachine(hierarchicalBaseTrafficLightMachine, {
     devTools: true
   });
 
@@ -29,4 +29,4 @@ function CheckBaseTrafficLight() {
   );
 }
 
-export default CheckBaseTrafficLight;
+export default HierarchicalBaseTrafficLight;

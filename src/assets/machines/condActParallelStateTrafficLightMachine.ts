@@ -16,13 +16,14 @@ export const condActParallelStateTrafficLightMachine = createMachine(
         initial: "turnedOn", //we are here by default, initial substate is turnedOn
         states: {        
           turnedOn: {
-            on: {
-              SWITCH_LIGHTS: { //when we hit the button, we are changing to red.switching AND yellow.turnedOn
-                target: "#yellow.turnedOn" 
+            after: {
+              7000: { //when we hit the button, we are changing to red.switching AND yellow.turnedOn
+                target: "#yellow.turnedOn"
               }
             }
           },
-          turnedOff: {}
+          turnedOff: {},
+          blinking: {}
         }
       },
       yellow: {
@@ -30,8 +31,8 @@ export const condActParallelStateTrafficLightMachine = createMachine(
         initial: "turnedOff",
         states: {
           turnedOn: {
-            on: {
-              SWITCH_LIGHTS: [
+            after: {
+              3000: [
                 { 
                   target: ["#green.turnedOn", "#yellow.turnedOff", "#red.turnedOff"], 
                   cond: "ifNextIsGreen", 
@@ -44,7 +45,15 @@ export const condActParallelStateTrafficLightMachine = createMachine(
               ]
             }
           },
-          turnedOff: {}
+          turnedOff: {},
+          blinking: {
+            after: {
+              3000: {
+                target: [ "#yellow.turnedOff", "#red.turnedOn" ],
+                actions: "toggleNextIsGreen"
+              }
+            }
+          }
         }
       },
       green: {
@@ -52,13 +61,25 @@ export const condActParallelStateTrafficLightMachine = createMachine(
         initial: "turnedOff",
         states: {
           turnedOn: {
+            after: {
+              7000: {
+                target: [ "#green.blinking" ]
+              }
+            },
             on: {
-              SWITCH_LIGHTS: {
-                target: [ "#yellow.turnedOn", "#green.turnedOff" ]
+              REQUEST_TO_WALK: {
+                target: [ "#green.blinking" ]
               }
             }
           },
-          turnedOff: {}
+          turnedOff: {},
+          blinking: {
+            after: {
+              3000: {
+                target: [ "#yellow.blinking", "#green.turnedOff" ]
+              }
+            }
+          }
         }
       }
     }
