@@ -2,10 +2,9 @@
 import ReactDOM from "react-dom/client";
 // import BaseTrafficLight from "./assets/components/BaseTrafficLight.tsx";
 // import HierarchicalBaseTrafficLight from "./assets/components/HierarchicalBaseTrafficLight";
+// import DelayedTrafficLight from "./assets/components/DelayedTrafficLight.tsx";
 // import ParallelStateTrafficLight from "./assets/components/ParallelStateTrafficLight.tsx";
-import CondActParallelStateTrafficLightMachine from "./assets/components/CondActParallelStateTrafficLightMachine.tsx";
-// import PedestrianTrafficLight from "./assets/components/PedestrianTrafficLight";
-// import BlinkingTrafficLight from "./assets/components/BlinkingTrafficLight.tsx";
+import ContextActionsConditionsTrafficLight from "./assets/components/ContextActionsConditionsTrafficLight.tsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -14,7 +13,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     {/* <HierarchicalBaseTrafficLight /> */}
     {/* <DelayedTrafficLight /> */}
     {/* <ParallelStateTrafficLight /> */}
-    <CondActParallelStateTrafficLightMachine />
-    {/* <BlinkingTrafficLight /> */}
+    <ContextActionsConditionsTrafficLight />
   </div>
 );

@@ -5,50 +5,21 @@ export const delayedTrafficLightMachine = createMachine({
   initial: "red",
   predictableActionArguments: true,
   preserveActionOrder: true,
-  type: "parallel",
   states: {
     red: {
-      id: "red",
-      initial: "active",
-      states: {
-        active: {
-          after: {
-            2000: {
-              target: ["#yellow.active"]
-            }
-          }
-        },
-        inactive: {}
+      after: {
+        7000: "yellow"
       }
     },
     yellow: {
-      id: "yellow",
-      initial: "inactive",
-      states: {
-        active: {
-          after: {
-            2000: {
-              target: ["#green.active", "#red.inactive", "#yellow.inactive"]
-            }
-          }
-        },
-        inactive: {}
+      after: {
+        3000: "green"
       }
     },
     green: {
-      id: "green",
-      initial: "inactive",
-      states: {
-        active: {
-          after: {
-            2000: {
-              target: ["#red.active", "#green.inactive"]
-            }
-          }
-        },
-        inactive: {}
+      on: {
+        7000: "red"
       }
-
     }
   }
 });

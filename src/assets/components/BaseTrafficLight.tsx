@@ -26,7 +26,7 @@ function BaseTrafficLight() {
         <div className={`bg-green-600 w-[100px] h-[100px] rounded-full absolute top-[270px] left-9 border-dotted border-2 border-green-600 bg-shadow-green bg-size-5 radial-gradient-lime ${current.matches("green") ? "opacity-100" : "opacity-10"}`}></div>
       </div>
       <button onClick={() => send("SWITCH_LIGHT")}>
-        Change state
+        Change light
       </button>
     </div>
   );

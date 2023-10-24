@@ -1,8 +1,8 @@
 import { createMachine } from "xstate";
 
-export const condActParallelStateTrafficLightMachine = createMachine(
+export const contextActionsConditionsTrafficLightMachine = createMachine(
   {
-    id: "condActParallelStateTrafficLightMachine",
+    id: "contextActionsConditionsTrafficLightMachine",
     initial: "red", //initial state is red
     predictableActionArguments: true,
     preserveActionOrder: true,
@@ -13,43 +13,43 @@ export const condActParallelStateTrafficLightMachine = createMachine(
     states: {
       red: {
         id: "red",
-        initial: "turnedOn", //we are here by default, initial substate is turnedOn
+        initial: "active", //we are here by default, initial substate is turnedOn
         states: {        
-          turnedOn: {
+          active: {
             after: {
               7000: { //when we hit the button, we are changing to red.switching AND yellow.turnedOn
-                target: "#yellow.turnedOn"
+                target: "#yellow.active"
               }
             }
           },
-          turnedOff: {},
+          inactive: {},
           blinking: {}
         }
       },
       yellow: {
         id: "yellow",
-        initial: "turnedOff",
+        initial: "inactive",
         states: {
-          turnedOn: {
+          active: {
             after: {
               3000: [
                 { 
-                  target: ["#green.turnedOn", "#yellow.turnedOff", "#red.turnedOff"], 
+                  target: ["#green.active", "#yellow.inactive", "#red.inactive"], 
                   cond: "ifNextIsGreen", 
                   actions: "toggleNextIsGreen"
                 },
                 { 
-                  target: ["#green.turnedOff", "#yellow.turnedOff", "#red.turnedOn"], 
+                  target: ["#green.inactive", "#yellow.inactive", "#red.active"], 
                   actions: "toggleNextIsGreen" 
                 }
               ]
             }
           },
-          turnedOff: {},
+          inactive: {},
           blinking: {
             after: {
               3000: {
-                target: [ "#yellow.turnedOff", "#red.turnedOn" ],
+                target: [ "#yellow.inactive", "#red.active" ],
                 actions: "toggleNextIsGreen"
               }
             }
@@ -58,9 +58,9 @@ export const condActParallelStateTrafficLightMachine = createMachine(
       },
       green: {
         id: "green",
-        initial: "turnedOff",
+        initial: "inactive",
         states: {
-          turnedOn: {
+          active: {
             after: {
               7000: {
                 target: [ "#green.blinking" ]
@@ -72,11 +72,11 @@ export const condActParallelStateTrafficLightMachine = createMachine(
               }
             }
           },
-          turnedOff: {},
+          inactive: {},
           blinking: {
             after: {
               3000: {
-                target: [ "#yellow.blinking", "#green.turnedOff" ]
+                target: [ "#yellow.blinking", "#green.inactive" ]
               }
             }
           }
@@ -98,4 +98,4 @@ export const condActParallelStateTrafficLightMachine = createMachine(
   }
 );
 
-export default condActParallelStateTrafficLightMachine;
+export default contextActionsConditionsTrafficLightMachine;
