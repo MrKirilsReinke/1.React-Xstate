@@ -1,4 +1,3 @@
-// import React from "react";
 import ReactDOM from "react-dom/client";
 // import BaseTrafficLight from "./assets/components/BaseTrafficLight.tsx";
 // import HierarchicalBaseTrafficLight from "./assets/components/HierarchicalBaseTrafficLight";
