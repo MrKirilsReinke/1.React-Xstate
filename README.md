@@ -71,7 +71,7 @@ For example, if you're using a machine with a "SWITCH_LIGHT" event, you can use 
 * Conditional actions and state transitions
 * Delayed state transitions
 * Hierarchical state structure
-* 2Parallel state handling
+* Parallel state handling
 
 ## Credits
 
