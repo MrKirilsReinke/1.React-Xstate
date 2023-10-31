@@ -24,7 +24,8 @@ function ContextActionsConditionsTrafficLight() {
         <div className={`bg-green-600 w-[100px] h-[100px] rounded-full absolute top-[270px] left-9 border-dotted border-2 border-green-600 bg-shadow-green bg-size-5 radial-gradient-lime ${current.matches("green.blinking") ? "blinking" : (current.matches("green.active") ? "opacity-100" : "opacity-10")}`}></div>
       </div>
       {current.matches("green.active") && 
-        <button onClick={() => send("REQUEST_TO_WALK")}>
+        <button className="w-[150px] rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 place-self-center"
+          onClick={() => send("REQUEST_TO_WALK")}>
           Request to walk
         </button>
       }
