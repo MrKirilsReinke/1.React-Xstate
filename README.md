@@ -77,10 +77,6 @@ For example, if you're using a machine with a "SWITCH_LIGHT" event, you can use 
 
 This project is built with TypeScript, React, and XState, making use of their respective libraries and tools. Special thanks to the XState library for making state management and finite state machines more accessible in React applications.
 
-## License
-
-This project is open-source and is available under the [MIT License](LICENSE). You are free to use, modify, and distribute this project for any purpose.
-
 ## How to Contribute
 
 Contributions to this project are welcome. To contribute, follow these steps:
