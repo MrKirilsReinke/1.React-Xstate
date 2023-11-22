@@ -10,7 +10,6 @@ This project is a TypeScript, React, and XState implementation of a traffic ligh
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
-- [License](#license)
 - [Features](#features)
 - [How to Contribute](#how-to-contribute)
 
